@@ -12,7 +12,12 @@ jobs:
           command: |
             version="build-$CIRCLE_BUILD_NUM"
             echo $version
+            pwd
+            echo "I have come here"
+            docker image ls
             docker build -t rlncts/todo-app:$version .
+            docker image list
+            echo "I am here"
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             docker push rlncts/todo-app:$version
 
