@@ -41,6 +41,7 @@ jobs:
             echo $TAG
             sed -i "s/build-.*/build-$TAG/g" manifest/deployment.yaml
             cat manifest/deployment.yaml
+            echo "let us see if it works"
             git add .
             echo "I am here"
             git commit -m "new build with imgTag build-$TAG"
